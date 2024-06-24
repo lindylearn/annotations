@@ -186,7 +186,7 @@
     position: absolute !important;
     top: 8px !important;
     left: calc((100vw - var(--lindy-pagewidth)) / 2 + var(--lindy-pagewidth) - 4px) !important;
-    width: calc((100vw - var(--lindy-pagewidth)) / 2 - 8px - 4px) !important;
+    width: calc((100vw - var(--lindy-pagewidth)) / 2 - 8px - 34px) !important;
     height: calc(100% - 8px) !important;
     user-select: none !important;
     contain: strict !important;

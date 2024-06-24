@@ -14,7 +14,7 @@
     export let smartHighlightsProxy: SmartHighlightsProxy;
     export let overlayModifier: OverlayManager;
 
-    let privateNotesEnabled: boolean = true;
+    let privateNotesEnabled: boolean = false;
     getFeatureFlag(enableAnnotationsFeatureFlag).then((defaultEnabled) => {
         privateNotesEnabled = defaultEnabled;
     });
