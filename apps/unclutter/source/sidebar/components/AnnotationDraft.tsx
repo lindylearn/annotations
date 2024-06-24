@@ -75,7 +75,7 @@ export default function AnnotationDraft({
     return (
         <div
             className={clsx(
-                `annotation annotation-draft relative rounded-l-sm rounded-r-md p-2 px-3 text-sm shadow`,
+                `annotation annotation-draft relative rounded-l-sm rounded-r-md p-2 px-3 text-sm shadow flex flex-wrap`,
                 annotation.focused && "focused",
                 className
             )}
@@ -84,11 +84,12 @@ export default function AnnotationDraft({
                 // @ts-ignore
                 "--dark-border-color": colorDark || color,
                 maxHeight: heightLimitPx,
+                minWidth: 110,
             }}
             // ref={ref}
         >
             <TextareaAutosize
-                className="w-full select-none resize-none overflow-hidden bg-transparent align-top outline-none placeholder:select-none placeholder:text-stone-400 dark:placeholder:text-stone-600"
+                className="select-none resize-none overflow-hidden bg-transparent align-top outline-none placeholder:select-none placeholder:text-stone-400 dark:placeholder:text-stone-600 grow"
                 placeholder={
                     userInfo?.aiEnabled
                         ? annotation.tags.map((t) => `#${t}`).join(" ")
@@ -116,9 +117,9 @@ export default function AnnotationDraft({
             {isFetching ? (
                 <div className="loader absolute right-3 top-[9px] h-4 w-4" />
             ) : (
-                <div className="animate-fadein absolute top-[1px] right-1 flex gap-0 text-stone-400 dark:text-stone-600">
+                <div className="animate-fadein flex gap-4 text-stone-400 dark:text-stone-600">
                     <svg
-                        className="annotation-button h-8 cursor-pointer p-2"
+                        className="annotation-button h-4 cursor-pointer"
                         viewBox="0 0 512 512"
                         onMouseDown={(e) => e.preventDefault()}
                         onClick={() => copyTextToClipboard(`"${annotation.quote_text}"`)}
@@ -129,7 +130,7 @@ export default function AnnotationDraft({
                         />
                     </svg>
                     <svg
-                        className="annotation-button h-8 cursor-pointer p-2"
+                        className="annotation-button h-4 cursor-pointer"
                         viewBox="0 0 448 512"
                         onMouseDown={(e) => e.preventDefault()}
                         onClick={() => deleteAnnotation(userInfo, annotation)}
