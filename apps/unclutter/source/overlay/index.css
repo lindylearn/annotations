@@ -279,7 +279,7 @@
     }
     #lindy-annotations-bar {
         left: calc(var(--lindy-pagewidth) + 10px + 5px) !important;
-        width: calc(100vw - (var(--lindy-pagewidth) + 10px + 5px) - 15px) !important;
+        width: calc(100vw - (var(--lindy-pagewidth) + 10px + 5px) - 46px) !important;
     }
     .lindy-page-settings-pageadjacent {
         left: calc(var(--lindy-pagewidth) + 10px + 0px) !important;
